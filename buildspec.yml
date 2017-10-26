@@ -1,0 +1,9 @@
+version: 0.1
+phases:
+  build:
+    commands:
+      - npm install -g @angular/cli && npm install && ng build --target=production
+artifacts:
+  files:
+    - dist/*
+discard-paths: yes

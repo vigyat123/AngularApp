@@ -6,4 +6,6 @@ phases:
 artifacts:
   files:
     - dist/*
+    - awsscripts
+    - appspec.yml
 discard-paths: yes

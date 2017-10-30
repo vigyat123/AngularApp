@@ -1,9 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: BeyondWallsXBRL.war
-    destination: /tmp/codedeploy-deployment-staging-area/
-  - source: awsscripts/configure_http_port.xsl
+  - source: dist
     destination: /tmp/codedeploy-deployment-staging-area/
 hooks:
   ApplicationStop:

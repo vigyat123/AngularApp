@@ -6,6 +6,9 @@ phases:
 artifacts:
   files:
     - dist/*
-    - awsscripts
+    - awsscripts/install_dependencies.sh
+    - awsscripts/start_application.sh
+    - awsscripts/stop_application.sh
+    - awsscripts/aws_codedeploy_config.sh
     - appspec.yml
 discard-paths: yes

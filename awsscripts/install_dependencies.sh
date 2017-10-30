@@ -10,7 +10,7 @@ sudo yum install tomcat7 tomcat7-webapps
 fi
 NODE_HOME=/home/ec2-user/.nvm/versions/node
 if [ -d $NODE_HOME ]; then
-
+echo "NodeJS is already installed at $NODE_HOME. Skip reinstalling it."
 else
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
 . ~/.nvm/nvm.sh

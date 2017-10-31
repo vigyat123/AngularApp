@@ -36,11 +36,12 @@ tar xzf $TOMCAT7_CORE_TAR_FILENAME
 
 # Copy over to the CATALINA_HOME
 cp -r /tmp/$TOMCAT7_CORE_UNPACKED_DIRNAME/* $CATALINA_HOME
-NODE_HOME=/home/ec2-user/.nvm/versions/node
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
 . ~/.nvm/nvm.sh
- nvm install 6.11.5   
- node -e "console.log('Running Node.js ' + process.version)"
+nvm install 6.11.5
+node -e "console.log('Running Node.js ' + process.version)"
+
 # Create the service init.d script
 cat > /etc/init.d/tomcat7 <<'EOF'
 #!/bin/bash

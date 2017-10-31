@@ -41,3 +41,28 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | b
 . ~/.nvm/nvm.sh
  nvm install 6.11.5   
  node -e "console.log('Running Node.js ' + process.version)"
+# Create the service init.d script
+cat > /etc/init.d/tomcat7 <<'EOF'
+#!/bin/bash
+# description: Tomcat7 Start Stop Restart
+# processname: tomcat7
+PATH=$JAVA_HOME/bin:$PATH
+export PATH
+CATALINA_HOME='/usr/share/tomcat7-codedeploy'
+case $1 in
+start)
+sh $CATALINA_HOME/bin/startup.sh
+;;
+stop)
+sh $CATALINA_HOME/bin/shutdown.sh
+;;
+restart)
+sh $CATALINA_HOME/bin/shutdown.sh
+sh $CATALINA_HOME/bin/startup.sh
+;;
+esac
+exit 0
+EOF
+
+# Change permission mode for the service script
+chmod 755 /etc/init.d/tomcat7

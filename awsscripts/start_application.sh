@@ -24,5 +24,5 @@ if [[ -d $CATALINA_HOME/webapps/$CONTEXT_PATH ]]; then
 fi
 
 # Copy the WAR file to the webapps directory
-cp $WAR_STAGED_LOCATION/* $CATALINA_HOME/webapps/$CONTEXT_PATH
+cp -r $WAR_STAGED_LOCATION/* $CATALINA_HOME/webapps/$CONTEXT_PATH
 service tomcat7 start

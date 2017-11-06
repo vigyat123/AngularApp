@@ -8,7 +8,7 @@ DEPLOY_TO_ROOT='true'
 SERVER_HTTP_PORT='8080'
 
 TEMP_STAGING_DIR='/tmp/codedeploy-deployment-staging-area'
-WAR_STAGED_LOCATION="$TEMP_STAGING_DIR/dist"
+WAR_STAGED_LOCATION="$TEMP_STAGING_DIR"
 
 # In Tomcat, ROOT.war maps to the server root
 if [[ "$DEPLOY_TO_ROOT" = 'true' ]]; then
@@ -24,5 +24,5 @@ if [[ -d $CATALINA_HOME/webapps/$CONTEXT_PATH ]]; then
 fi
 
 # Copy the WAR file to the webapps directory
-cp -r $WAR_STAGED_LOCATION $CATALINA_HOME/webapps/$CONTEXT_PATH.war
+cp -r $WAR_STAGED_LOCATION/* $CATALINA_HOME/webapps/$CONTEXT_PATH.war
 service tomcat7 start

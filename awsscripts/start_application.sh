@@ -8,7 +8,7 @@ DEPLOY_TO_ROOT='true'
 SERVER_HTTP_PORT='8080'
 
 TEMP_STAGING_DIR='/tmp/codedeploy-deployment-staging-area'
-WAR_STAGED_LOCATION="$TEMP_STAGING_DIR"
+WAR_STAGED_LOCATION="$TEMP_STAGING_DIR/dist"
 
 # In Tomcat, ROOT.war maps to the server root
 if [[ "$DEPLOY_TO_ROOT" = 'true' ]]; then

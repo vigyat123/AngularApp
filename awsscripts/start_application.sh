@@ -22,7 +22,7 @@ fi
 if [[ -d $CATALINA_HOME/webapps/$CONTEXT_PATH ]]; then
     rm -rfv $CATALINA_HOME/webapps/$CONTEXT_PATH
 fi
-
+mkdir -p $CATALINA_HOME/webapps/$CONTEXT_PATH.war
 # Copy the WAR file to the webapps directory
 cp -r $WAR_STAGED_LOCATION/* $CATALINA_HOME/webapps/$CONTEXT_PATH.war
 service tomcat7 start
